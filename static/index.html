@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover Maharashtra destinations, attractions, sample hotel suggestions and estimated trip budgets."
+    />
+    <title>Maharashtra Trails | Tourism Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="name-gate-active">
+    <section
+      id="student-welcome"
+      class="student-welcome"
+      aria-labelledby="welcome-title"
+    >
+      <div class="welcome-card">
+        <div class="welcome-mark">✦</div>
+        <p class="welcome-kicker">A STUDENT MINI PROJECT</p>
+        <h1 id="welcome-title">Maharashtra <span>Tourism Planner</span></h1>
+        <p class="welcome-copy">
+          Discover destinations, nearby attractions, sample hotel suggestions
+          and a simple trip budget.
+        </p>
+        <form id="student-name-form" class="student-name-form">
+          <label for="student-name">Enter student name</label
+          ><input
+            id="student-name"
+            name="studentName"
+            type="text"
+            maxlength="60"
+            placeholder="Type your full name"
+            autocomplete="name"
+            required
+          /><button type="submit">Start exploring <span>→</span></button>
+          <p class="welcome-note">
+            Enter your name to open the tourism planner.
+          </p>
+        </form>
+      </div>
+      <div class="welcome-landscape" aria-hidden="true">
+        <div class="welcome-sun"></div>
+        <div class="welcome-hill hill-one"></div>
+        <div class="welcome-hill hill-two"></div>
+        <div class="welcome-hill hill-three"></div>
+        <span>HILLS · HERITAGE · COAST</span>
+      </div>
+    </section>
+    <header class="topbar app-content">
+      <a class="brand" href="#home"
+        ><span class="brand-mark">✦</span
+        ><span>Maharashtra<span class="brand-light">Trails</span></span></a
+      >
+      <nav>
+        <a href="#destinations">Destinations</a
+        ><a href="#planner">Trip planner</a><a href="#about">About</a>
+      </nav>
+      <a class="nav-cta" href="#destinations">Explore places <span>↗</span></a>
+    </header>
+    <main id="home" class="app-content">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span> YOUR NEXT MAHARASHTRA GETAWAY
+          </div>
+          <h1>Find your kind<br />of <span>somewhere.</span></h1>
+          <p class="hero-copy">
+            From misty Sahyadri mornings to the Konkan coast. Discover places to
+            go, things to see and what your trip might cost.
+          </p>
+          <form id="search-form" class="searchbar">
+            <span class="search-icon">⌕</span
+            ><input
+              id="search-input"
+              autocomplete="off"
+              placeholder="Try Matheran, Lonavala, Alibaug…"
+              aria-label="Search Maharashtra destinations"
+            /><button type="submit">Explore <span>→</span></button>
+            <div id="suggestions" class="suggestions hidden"></div>
+          </form>
+          <div class="hero-foot">
+            <span>✦ 50 destinations to explore</span
+            ><span>✦ Plan a trip in minutes</span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="sun"></div>
+          <div class="mountain mountain-back"></div>
+          <div class="mountain mountain-front"></div>
+          <div class="hero-sticker">
+            <span>MAHARASHTRA</span><strong>Wild at heart.</strong
+            ><small>Hills · Heritage · Coast</small>
+          </div>
+          <div class="art-caption">
+            18° 59' N&nbsp; · &nbsp;73° 16' E <span>THE SAHYADRIS</span>
+          </div>
+        </div>
+      </section>
+      <section class="quick-stats">
+        <div><strong>50</strong><span>DESTINATIONS</span></div>
+        <div><strong>3</strong><span>TRIP LENGTHS</span></div>
+        <div><strong>₹</strong><span>BUDGET ESTIMATES</span></div>
+        <p>Made for curious travellers. Built for easy planning.</p>
+      </section>
+      <section id="destinations" class="section destinations-section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow muted">THE GOOD PLACES</div>
+            <h2>Where will you go <span>next?</span></h2>
+            <p>Start with a favourite, or find somewhere new.</p>
+          </div>
+          <div class="filter-pills" id="filter-pills">
+            <button class="filter active" data-category="All">All places</button
+            ><button class="filter" data-category="Hill station">
+              Hill stations</button
+            ><button class="filter" data-category="Beach">Beaches</button
+            ><button class="filter" data-category="Heritage">Heritage</button
+            ><button class="filter" data-category="Nature">Nature</button>
+          </div>
+        </div>
+        <div id="destination-status" class="status-line" aria-live="polite">
+          Loading destinations…
+        </div>
+        <div id="destination-grid" class="destination-grid"></div>
+        <button id="show-all" class="outline-button">
+          Show all destinations <span>→</span>
+        </button>
+      </section>
+      <section id="planner" class="planner-section">
+        <div class="planner-intro">
+          <div class="eyebrow muted">THE PRACTICAL BIT</div>
+          <h2>A little planning.<br /><span>A lot more exploring.</span></h2>
+          <p>
+            Get a ballpark budget before you go. No bookings, no surprises —
+            just a helpful starting point.
+          </p>
+          <div class="planner-note">
+            <span>✳</span>
+            <p>
+              <strong>Keep it flexible</strong><br />Actual prices vary by
+              season, availability and travel style. Treat these numbers as a
+              guide.
+            </p>
+          </div>
+        </div>
+        <div class="budget-card">
+          <div class="budget-title">
+            <div>
+              <span class="step-label">YOUR TRIP, AT A GLANCE</span>
+              <h3>Estimate your budget</h3>
+            </div>
+            <span class="calculator-icon">⌗</span>
+          </div>
+          <form id="budget-form" class="budget-form">
+            <label
+              >Destination
+              <select id="budget-destination">
+                <option value="">Choose a destination</option>
+              </select></label
+            >
+            <div class="form-two">
+              <label
+                >Travellers<input
+                  id="travellers"
+                  type="number"
+                  min="1"
+                  max="50"
+                  value="2"
+                  required /></label
+              ><label
+                >Trip length<select id="days">
+                  <option value="1">1 day</option>
+                  <option value="2" selected>2 days / 1 night</option>
+                  <option value="3">3 days / 2 nights</option>
+                </select></label
+              >
+            </div>
+            <label
+              >Stay preference<select id="hotel-category">
+                <option value="budget">Budget — ₹1,200 / room / night</option>
+                <option value="standard" selected>
+                  Standard — ₹2,500 / room / night
+                </option>
+                <option value="premium">Premium — ₹5,000 / room / night</option>
+              </select></label
+            >
+            <label
+              >Rooms
+              <span class="label-hint"
+                >Default: one room per two travellers</span
+              ><input
+                id="rooms"
+                type="number"
+                min="1"
+                max="50"
+                value="1"
+                required
+            /></label>
+            <div class="form-two">
+              <label
+                >Transport (total ₹)<input
+                  id="transport"
+                  type="number"
+                  min="0"
+                  step="100"
+                  value="1500"
+                  required /></label
+              ><label
+                >Food / person / day (₹)<input
+                  id="food"
+                  type="number"
+                  min="0"
+                  step="50"
+                  value="500"
+                  required
+              /></label>
+            </div>
+            <label
+              >Miscellaneous (total ₹)<input
+                id="misc"
+                type="number"
+                min="0"
+                step="100"
+                value="500"
+                required
+            /></label>
+            <button class="primary-button full-button" type="submit">
+              Calculate my estimate <span>→</span>
+            </button>
+            <div id="budget-error" class="error-text" aria-live="polite"></div>
+          </form>
+          <div
+            id="budget-result"
+            class="budget-result hidden"
+            aria-live="polite"
+          >
+            <div class="result-top">
+              <span>ESTIMATED TOTAL</span><strong id="total-cost">₹0</strong
+              ><small id="per-person">₹0 per person</small>
+            </div>
+            <div id="cost-breakdown" class="cost-breakdown"></div>
+            <p class="estimate-disclaimer">
+              Illustrative estimate only. Check actual transport, hotel and food
+              prices before travelling.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="detail-section" class="detail-section hidden">
+        <div class="detail-header">
+          <div>
+            <div class="eyebrow muted">YOUR DESTINATION GUIDE</div>
+            <h2 id="detail-title">Destination</h2>
+            <p id="detail-description"></p>
+          </div>
+          <button
+            id="close-detail"
+            class="close-button"
+            aria-label="Close destination details"
+          >
+            ×
+          </button>
+        </div>
+        <div class="detail-meta" id="detail-meta"></div>
+        <div class="detail-columns">
+          <div>
+            <h3>Worth a visit <span>↗</span></h3>
+            <div id="attraction-list" class="info-list"></div>
+          </div>
+          <div>
+            <h3>Places to stay <span>↗</span></h3>
+            <p class="sample-note">
+              Sample hotel suggestions — not live listings.
+            </p>
+            <div id="hotel-list" class="info-list"></div>
+          </div>
+        </div>
+        <div class="itinerary-box">
+          <div>
+            <h3>Make a simple itinerary</h3>
+            <p>
+              Arrange a few known attractions into a relaxed day-by-day plan.
+            </p>
+          </div>
+          <div class="itinerary-controls">
+            <select id="itinerary-days" aria-label="Itinerary length">
+              <option value="1">1 day</option>
+              <option value="2" selected>2 days</option>
+              <option value="3">3 days</option></select
+            ><button id="make-itinerary" class="outline-button">
+              Build itinerary →
+            </button>
+          </div>
+          <div id="itinerary-output" class="itinerary-output"></div>
+        </div>
+      </section>
+      <section id="about" class="about-section">
+        <div class="about-icon">✳</div>
+        <div>
+          <div class="eyebrow muted">MADE FOR EXPLORERS</div>
+          <h2>Less searching. More <span>seeing.</span></h2>
+          <p>
+            Maharashtra Trails is a student project that brings destination
+            details, sample stays and simple trip estimates together in one
+            place. It is a planning aid, not a booking service.
+          </p>
+        </div>
+        <div class="about-tags">
+          <span>Destination discovery</span><span>Budget planning</span
+          ><span>Simple itineraries</span><span>Student project</span>
+        </div>
+      </section>
+    </main>
+    <footer class="app-content">
+      <a class="brand" href="#home"
+        ><span class="brand-mark">✦</span
+        ><span>Maharashtra<span class="brand-light">Trails</span></span></a
+      >
+      <p>Explore thoughtfully. Travel responsibly.</p>
+      <span>Sample data · Not a booking service</span>
+    </footer>
+    <div
+      id="student-greeting"
+      class="student-greeting app-content"
+      aria-live="polite"
+    ></div>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
